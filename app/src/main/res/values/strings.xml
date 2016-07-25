@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AppSample</string>
+    <string name="action_settings">Settings</string>
+    <string name="clique_para_conectar">Clique para Conectar</string>
+</resources>
