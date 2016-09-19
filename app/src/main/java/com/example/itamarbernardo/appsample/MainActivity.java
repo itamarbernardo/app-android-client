@@ -1,11 +1,13 @@
 package com.example.itamarbernardo.appsample;
 
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -74,20 +76,20 @@ public class MainActivity extends AppCompatActivity {
 //        setContentView(R.layout.mylayout);
 //    }
 
-    public void run(View view) throws UnknownHostException, IOException, InterruptedException {
+    public void ligarLampada(View arg0){
 
-        try {
-            Socket clientSocket = new Socket("192.168.0.6", 1000); //Abre o socket com o Arduino com o dado IP e porta
-            DataOutputStream outToServer = new DataOutputStream(clientSocket.getOutputStream()); //Pega o stream de envio de dados para o Arduino
-
-            //outToServer.writeUTF("13923"); //Envia uma String
-            outToServer.write('1'); //Envia char
-            clientSocket.close(); //Fecha o socket
-        }catch(Exception e){
-            e.getMessage();
-        }
+        Cliente cliente = new Cliente("192.168.0.6", 1000, '1');
+        cliente.execute();
 
     }
+
+    public void desligarLampada(View arg0){
+
+        Cliente cliente = new Cliente("192.168.0.6", 1000, '2');
+        cliente.execute();
+
+    }
+
 
     @Override
     public void onStart() {
@@ -127,5 +129,62 @@ public class MainActivity extends AppCompatActivity {
         );
         AppIndex.AppIndexApi.end(client, viewAction);
         client.disconnect();
+    }
+}
+
+class Cliente extends AsyncTask<Void, Void, Void>{
+    private Socket cliente;
+    private DataOutputStream saida;
+    //private DataInputStream entrada;
+    private String ip;
+    private int porta;
+    private char codigo;
+
+    public Cliente(String ip, int porta, char codigo){
+        this.ip = ip;
+        this.porta = porta;
+        this.codigo = codigo;
+    }
+
+    public void criarConexao(){
+        try {
+            cliente = new Socket(ip, porta);
+
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public void enviaMensagem(){
+        try {
+            saida = new DataOutputStream(cliente.getOutputStream());
+            saida.writeChar(codigo);
+            saida.flush();
+        } catch (IOException e) {
+
+            e.printStackTrace();
+        }
+    }
+
+
+    public void fecharConexao(){
+        try {
+            cliente.close();
+        } catch (IOException e) {
+
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    protected Void doInBackground(Void... voids) {
+        criarConexao();
+        enviaMensagem();
+        fecharConexao();
+
+        return null;
     }
 }

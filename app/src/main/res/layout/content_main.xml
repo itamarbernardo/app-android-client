@@ -20,6 +20,18 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="168dp"
-        android:onClick="run"
+        android:onClick="ligarLampada"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Desligar"
+        android:id="@+id/button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/conectar"
+        android:layout_alignEnd="@+id/conectar"
+        android:layout_marginBottom="77dp"
+        android:onClick="desligarLampada"
         />
 </RelativeLayout>
