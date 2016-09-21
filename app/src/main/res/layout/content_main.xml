@@ -12,26 +12,27 @@
     tools:context="com.example.itamarbernardo.appsample.MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ligar"
-        android:id="@+id/conectar"
+    <ImageView
+        android:layout_width="1000dp"
+        android:layout_height="1000dp"
+        android:id="@+id/imageView"
+        android:background="@color/material_deep_teal_500"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="168dp"
-        android:onClick="ligarLampada"
-        />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
-    <Button
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Desligar"
-        android:id="@+id/button"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/conectar"
-        android:layout_alignEnd="@+id/conectar"
-        android:layout_marginBottom="77dp"
-        android:onClick="desligarLampada"
-        />
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Bem Vindo a sua Casa"
+        android:id="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="false"
+        android:layout_alignWithParentIfMissing="false"
+        android:shadowColor="#d62121"
+        android:layout_marginLeft="90dp"
+        android:layout_marginRight="100dp" />
 </RelativeLayout>
