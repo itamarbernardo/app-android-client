@@ -10,23 +10,30 @@
         android:layout_height="wrap_content"
         android:text="Ligar"
         android:id="@+id/conectar"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="168dp"
         android:onClick="ligarLampada"
-        />
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/textView_ControleDeLuz"
+        android:layout_alignStart="@+id/textView_ControleDeLuz" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Desligar"
         android:id="@+id/button"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/conectar"
-        android:layout_alignEnd="@+id/conectar"
-        android:layout_marginBottom="77dp"
         android:onClick="desligarLampada"
-        />
+        android:layout_alignTop="@+id/conectar"
+        android:layout_toRightOf="@+id/conectar"
+        android:layout_toEndOf="@+id/conectar" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Controle de Luz"
+        android:id="@+id/textView_ControleDeLuz"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="85dp" />
 
 
 </RelativeLayout>

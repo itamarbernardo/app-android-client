@@ -15,24 +15,22 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="@string/bem_vindo_a_sua_casa"
-        android:id="@+id/textView"
-        android:layout_alignWithParentIfMissing="false"
-        android:shadowColor="#d62121"
-        android:layout_gravity="center"
-        android:layout_marginTop="99dp"
-        android:fontFamily="@string/abc_font_family_title_material"
-        android:textAlignment="center"
-        android:textColor="#0314fb"
-        android:width="1999dp"
-        android:fontFeatureSettings="@string/abc_action_menu_overflow_description"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Bem-vindo a sua casa!"
+        android:id="@+id/textView2"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="false"
-        android:linksClickable="false"
-        android:longClickable="false"
-        android:maxHeight="100dp"
-        android:maxLength="100" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="91dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Luz"
+        android:id="@+id/botaoTela2"
+        android:layout_marginTop="122dp"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:onClick="minhaTela"
+        />
+
 </RelativeLayout>

@@ -1,5 +1,6 @@
 package com.example.itamarbernardo.appsample;
 
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -29,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
      */
     private GoogleApiClient client;
 
+    //MediaPlayer mySound;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +50,9 @@ public class MainActivity extends AppCompatActivity {
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
+
+//        mySound = MediaPlayer.create(this, R.drawable.voz);
+//        mySound.start();
     }
 
     @Override
@@ -72,9 +78,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //Aqui começa os codigos dos botões
-//    public void minhaTela(View view) {
-//        setContentView(R.layout.mylayout);
-//    }
+    public void minhaTela(View view) {
+        setContentView(R.layout.mylayout);
+    }
 
     public void ligarLampada(View arg0){
 
