@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private GoogleApiClient client;
 
-    //MediaPlayer mySound;
+    MediaPlayer mySound;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,8 +51,8 @@ public class MainActivity extends AppCompatActivity {
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
 
-//        mySound = MediaPlayer.create(this, R.drawable.voz);
-//        mySound.start();
+        mySound = MediaPlayer.create(this, R.raw.voz);
+        mySound.start();
     }
 
     @Override
